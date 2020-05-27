@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Home from './pages/Home'
+import SearchResults from './pages/SearchResults'
+import Detail from './pages/Detail'
+import Pepito from './context/StaticContext'
+import {MoviesContextProvider} from './context/MoviesContext'
+import { Link, Route } from "wouter"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <Pepito.Provider value={{name: 'midudev',
+  suscribeteAlCanal: true}}>
+      <div className="App">
+        <section className="App-content">
+          <Link to="/">
+            <figure className="App-logo">
+              <img alt='Movie logo' src='/logo192.png' />
+            </figure>
+          </Link>
+          <MoviesContextProvider>
+            <Route
+              component={Home}
+              path="/"
+            />
+            <Route
+              component={SearchResults}
+              path="/search/:keyword"  />
+            <Route
+              component={Detail}
+              path="/movie/:imdbID"
+            />
+          </MoviesContextProvider>
+        </section>
+      </div>
+    </Pepito.Provider>
+  )
 }
-
-export default App;
