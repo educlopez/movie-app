@@ -5,8 +5,8 @@ const fromApiResponseToMovies = apiResponse => {
   const {Search = []} = apiResponse
   if (Array.isArray(Search)){
       const movies = Search.map(poster => {
-      const {Poster, Title, imdbID} = poster
-      return {Poster, Title, imdbID}
+      const {Poster, Title, imdbID, Type, Year} = poster
+      return {Poster, Title, imdbID, Type, Year}
     })
     //console.log(movies)
     return movies

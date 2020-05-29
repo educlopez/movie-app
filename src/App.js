@@ -15,7 +15,7 @@ export default function App() {
         <section className="App-content">
           <Link to="/">
             <figure className="App-logo">
-              <img alt='Movie logo' src='/logo192.png' />
+              <img alt='Movie logo' src='/logo.png' />
             </figure>
           </Link>
           <MoviesContextProvider>

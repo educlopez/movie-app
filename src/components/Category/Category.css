@@ -1,5 +1,5 @@
 .Category-title {
-  color: white;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .Category-link {
-  color: white;
+  color: #ffffff;
   font-size: 1em;
   transition: color ease-in 0.1s;
 }

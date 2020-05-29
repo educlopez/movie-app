@@ -4,7 +4,7 @@ import MoviesContext from '../context/MoviesContext'
 
 const INITIAL_PAGE = 0
 
-export function useMovies ({ keyword } = { keyword: null }) {
+export function useMovies ({ keyword } = { keyword: "batman" }) {
   const [loading, setLoading] = useState(false)
   const [loadingNextPage, setLoadingNextPage] = useState(false)
 
