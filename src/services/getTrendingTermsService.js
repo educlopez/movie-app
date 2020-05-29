@@ -5,10 +5,10 @@ const fromApiResponseToMovies = apiResponse => {
   return data
 }
 
-export default function getTrendingTerms () {
+export default function getTrendingTerms ({ signal }) {
   const apiURL = `${API_URL}/trending/searches?api_key=${API_KEY}`
 
-  return fetch(apiURL)
+  return fetch(apiURL, {signal})
     .then(res => res.json())
     .then(fromApiResponseToMovies)
 }
